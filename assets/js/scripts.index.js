@@ -1,5 +1,5 @@
-
-console.log("entrou")
+let addBooks = [];
+let addPeople = [];
 class Book{
     constructor(title, author, pages){
         this.title = title;
@@ -18,7 +18,6 @@ class Person{
 
     addBook(book){
         this.arrayBooks.push(book);
-        console.log(`A pessoa ${this.name} pegou emprestado o livro ${book.title}`)
     }
 }
 
@@ -35,26 +34,42 @@ const book6 = new Book('extraordinario', 'R.J Palacio ', 322);
 
 class Library{
    addPeople = [person1, person2, person3];
-   addBooks = [book1, book2, book3, book4, book5,book6 ];
-}
-
-console.log({person1})
+   addBooks = [book1, book2, book3, book4, book5, book6];
+   } 
 
 person1.addBook(book1);
 person1.addBook(book3);
 person2.addBook(book2);
 person3.addBook(book5);
 
-console.log({person1});
-console.log({person2});
-console.log({person3});
+/////////////////////////////////// 
+
+console.log('Pessoas cadastradas: ' + addPeople);
 
 let msg = "";
 
+console.log({person1});
 person1.arrayBooks.forEach((book) => {
-    msg += book.title+", ";
+    msg += book.title+"; ";
 }
 )
-console.log(`A pessoa ${person1} tem os livros ${msg}`)
+console.log(`A pessoa ${person1.name} tem os livros ${msg}`);
 
+console.log({person2});
+person2.arrayBooks.forEach((book) => {
+    msg = "";
+    msg += book.title+"; ";
+}
+)
+console.log(`A pessoa ${person2.name} tem os livros ${msg}`);
 
+console.log({person3});
+person3.arrayBooks.forEach((book) => {
+    msg = "";
+    msg += book.title+"; ";
+}
+)
+console.log(`A pessoa ${person3.name} tem os livros ${msg}`);
+
+const library = new Library();
+console.log(library)
